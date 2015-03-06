@@ -1,6 +1,7 @@
 package asu.edu.televisionandroid;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -8,24 +9,55 @@ import android.widget.Button;
 import android.view.View.OnClickListener;
 import android.view.View;
 import android.content.Intent;
+import android.widget.EditText;
+
+import java.util.concurrent.ExecutionException;
 
 
 public class LoginActivity extends Activity {
+
+    EditText pass;
+    EditText user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         Button clickButton = (Button) findViewById(R.id.loginButton);
-        clickButton.setOnClickListener( new OnClickListener() {
+    }
 
-            @Override
-            public void onClick(View v) {
-                // TODO Auto-generated method stub
-                Intent myIntent = new Intent(LoginActivity.this, patientIDActivity.class);
-                LoginActivity.this.startActivity(myIntent);
-            }
-        });
+
+    public void onLoginClicked(View v) {
+        pass = (EditText) findViewById(R.id.getpassword);
+        user = (EditText) findViewById(R.id.getusername);
+
+        int ifactive = 2;
+        String utxt = pass.getText().toString();
+        String ptxt = user.getText().toString();
+
+        LoginAsync checkuser = new LoginAsync(utxt, ptxt);
+        checkuser.execute();
+
+        try {
+            ifactive = checkuser.get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+
+        if(ifactive == 1 ) {
+            Intent myIntent = new Intent(LoginActivity.this, patientIDActivity.class);
+            LoginActivity.this.startActivity(myIntent);
+            finish();
+        }else{
+            AlertDialog.Builder dlgAlert  = new AlertDialog.Builder(this);
+            dlgAlert.setMessage("wrong password or username");
+            dlgAlert.setTitle("Error Message...");
+            dlgAlert.setPositiveButton("OK", null);
+            dlgAlert.setCancelable(true);
+            dlgAlert.create().show();
+        }
     }
 
 
