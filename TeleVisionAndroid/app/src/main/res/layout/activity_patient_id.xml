@@ -17,7 +17,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="CLICK ME"
+        android:text="CONTINUE"
         android:id="@+id/buttonPatient"
         android:layout_marginBottom="186dp"
         android:background="#ffffff"
@@ -33,4 +33,14 @@
         android:layout_marginTop="106dp"
         android:text="On Patient Id Page"
         android:textColor="#ffffff" />
+
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:id="@+id/patientIDInput"
+        android:layout_below="@+id/textPatient"
+        android:layout_marginTop="60dp"
+        android:layout_marginLeft="25dp"
+        android:background="#ffffff"
+        android:hint="Enter Patient ID" />
 </RelativeLayout>

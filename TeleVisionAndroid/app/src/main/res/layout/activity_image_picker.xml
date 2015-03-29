@@ -17,12 +17,42 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="CLICK ME"
+        android:text="CONTINUE"
         android:id="@+id/buttonImagePicker"
-        android:layout_marginBottom="186dp"
+        android:layout_marginBottom="50dp"
         android:background="#ffffff"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
+
+    <Button android:text="Capture Photo"
+        android:id="@+id/capture"
+        android:background="#ffffff"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="150dp" />
+
+    <!--<Button android:text="Use Image"-->
+        <!--android:id="@+id/useimage"-->
+        <!--android:background="#ffffff"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignTop="@+id/capture"-->
+        <!--android:layout_alignLeft="@+id/buttonImagePicker"-->
+        <!--android:layout_alignStart="@+id/buttonImagePicker"-->
+        <!--android:layout_marginLeft="63dp"-->
+        <!--android:layout_marginStart="63dp" />-->
+
+    <ImageView
+        android:id="@+id/showImg"
+        android:layout_width="225dp"
+        android:layout_height="225dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_below="@+id/textImagePicker"
+        />
+
 
     <TextView
         android:layout_width="wrap_content"

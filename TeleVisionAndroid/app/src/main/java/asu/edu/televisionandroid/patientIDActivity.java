@@ -7,6 +7,8 @@ import android.view.MenuItem;
 import android.app.Activity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.util.Log;
 
 
 public class patientIDActivity extends Activity {
@@ -20,6 +22,12 @@ public class patientIDActivity extends Activity {
 
             @Override
             public void onClick(View v) {
+
+                // capture value of patientIDInput
+                EditText patientIDInput = (EditText) findViewById(R.id.patientIDInput);
+                String patientIDInputValue = patientIDInput.getText().toString();
+                Log.v("Patient ID", patientIDInputValue);
+
                 // TODO Auto-generated method stub
                 Intent myIntent = new Intent(patientIDActivity.this, SurveyActivity.class);
                 patientIDActivity.this.startActivity(myIntent);
