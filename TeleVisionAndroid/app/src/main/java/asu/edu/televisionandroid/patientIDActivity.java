@@ -10,6 +10,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.util.Log;
 
+import asu.edu.televisionandroid.survey.SurveyActivity;
+
 
 public class patientIDActivity extends Activity {
 

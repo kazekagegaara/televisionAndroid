@@ -1,0 +1,24 @@
+{
+    "questions": [
+        {
+            "question":"The selected photo is of which eye",
+            "multiselect":false,
+            "options":["left", "right"]
+        },
+        {
+            "question":"Have you recently had any accident",
+            "multiselect":false,
+            "options":["yes", "no"]
+        },
+        {
+            "question":"Have you been recently diagnosed with diabetes",
+            "multiselect":false,
+            "options":["yes", "no"]
+        },
+        {
+            "question":"Do you have any of the following symptoms.",
+            "multiselect":true,
+            "options":["blurred vision", "change in vision", "eye pain", "burning sensation"]
+        }
+    ]
+}

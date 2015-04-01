@@ -28,7 +28,7 @@
             android:label="@string/title_activity_patient_id" >
         </activity>
         <activity
-            android:name=".SurveyActivity"
+            android:name=".survey.SurveyActivity"
             android:label="@string/title_activity_survey" >
         </activity>
         <activity

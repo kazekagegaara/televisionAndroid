@@ -1,7 +1,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="asu.edu.televisionandroid.SurveyActivity">
+    tools:context="asu.edu.televisionandroid.survey.SurveyActivity">
 
 
     <ImageView
@@ -14,23 +14,68 @@
         android:background="@drawable/mayobg"
         android:scaleType="matrix" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="CLICK ME"
-        android:id="@+id/buttonSurvey"
-        android:layout_marginBottom="186dp"
-        android:background="#ffffff"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:layout_weight="1">
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical"
+            android:layout_weight=".9">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textSurvey"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="106dp"
-        android:text="On Survey Page"
-        android:textColor="#ffffff" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Please answer the following questions to continue."
+                android:id="@+id/textView3"
+                android:layout_gravity="center_horizontal"
+                android:autoText="false"
+                android:gravity="clip_horizontal"
+                android:textColor="#ded0d0d0" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical"
+            android:layout_weight=".2"
+            android:weightSum="1"
+            android:background="#D3D3D3">
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="349dp"
+                android:id="@+id/questionsList"
+                android:cacheColorHint="#00000000"
+                android:divider="#b5b5b5"
+                android:dividerHeight="1dp"
+                android:layout_above="@+id/buttonSurvey"
+                android:layout_weight="0.67" />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Submit"
+                android:id="@+id/buttonSurvey"
+                android:background="#ffffff"
+
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical"
+            android:layout_weight=".9"/>
+    </LinearLayout>
+    <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:id="@+id/textSurvey"-->
+        <!--android:layout_alignParentTop="true"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:layout_marginTop="106dp"-->
+        <!--android:text="On Survey Page"-->
+        <!--android:textColor="#ffffff" />-->
 </RelativeLayout>
