@@ -1,26 +1,58 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="asu.edu.televisionandroid.SubmitActivity">
+    tools:context="asu.edu.televisionandroid.SubmitActivity"
+    android:background="#ffffff">
 
+    <!-- Header aligned to top -->
 
-    <ImageView
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:id="@+id/imageViewSubmit"
+    <LinearLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:background="@drawable/mayobg"
-        android:scaleType="centerCrop" />
+        android:background="#1D318A"
+        android:gravity="center" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SUBMIT"
+            android:textColor="#FFF"
+            android:textSize="20dp"
+            android:layout_marginLeft="140dp"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="50dp"
+            android:background="#ffffff"
+            android:text="LOGOUT"
+            android:padding="5dp"
+            android:textSize="13dp" />
+    </LinearLayout>
+
+    <!--<ImageView-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:layout_height="fill_parent"-->
+        <!--android:id="@+id/imageViewSubmit"-->
+        <!--android:layout_alignParentTop="true"-->
+        <!--android:layout_alignParentLeft="true"-->
+        <!--android:layout_alignParentStart="true"-->
+        <!--android:background="@drawable/mayobg"-->
+        <!--android:scaleType="centerCrop" />-->
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="CLICK ME"
+        android:layout_width="275dp"
+        android:layout_height="50dp"
+        android:text="CONTINUE"
         android:id="@+id/buttonSubmit"
-        android:layout_marginBottom="186dp"
-        android:background="#ffffff"
+        android:layout_marginBottom="35dp"
+        android:background="@drawable/buttonborder"
+        android:stateListAnimator="@null"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
 
@@ -28,9 +60,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textSubmit"
-        android:layout_alignParentTop="true"
+        android:layout_marginTop="168dp"
+        android:text="Submitted Successfully"
+        android:textSize="25dp"
+        android:layout_below="@+id/header"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="106dp"
-        android:text="On Submit Page"
-        android:textColor="#ffffff" />
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView"
+        android:layout_alignBottom="@+id/textSubmit"
+        android:layout_alignRight="@+id/buttonSubmit"
+        android:layout_alignEnd="@+id/buttonSubmit"
+        android:layout_marginRight="29dp"
+        android:layout_marginEnd="29dp" />
 </RelativeLayout>

@@ -1,46 +1,89 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="asu.edu.televisionandroid.LoginActivity">
+    tools:context="asu.edu.televisionandroid.LoginActivity"
+    android:background="#ffffffff">
 
+    <!-- Header aligned to top -->
 
-    <ImageView
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:id="@+id/imageViewPatient"
+    <LinearLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:background="@drawable/mayobg"
-        android:scaleType="matrix" />
+        android:background="#1D318A"
+        android:gravity="center" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PATIENT ID"
+            android:textColor="#FFF"
+            android:textSize="20dp"
+            android:layout_marginLeft="140dp"
+        />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="30dp"
+            android:background="#ffffff"
+            android:text="LOGOUT"
+            android:padding="5dp"
+            android:textSize="13dp" />
+    </LinearLayout>
+
+
+    <!--<ImageView-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:layout_height="fill_parent"-->
+        <!--android:id="@+id/imageViewPatient"-->
+        <!--android:layout_alignParentTop="true"-->
+        <!--android:layout_alignParentLeft="true"-->
+        <!--android:layout_alignParentStart="true"-->
+        <!--android:background="@drawable/mayobg"-->
+        <!--android:scaleType="matrix" />-->
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="275dp"
+        android:layout_height="50dp"
         android:text="CONTINUE"
         android:id="@+id/buttonPatient"
-        android:layout_marginBottom="186dp"
-        android:background="#ffffff"
+        android:layout_marginBottom="35dp"
+        android:background="@drawable/buttonborder"
+        android:stateListAnimator="@null"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:textColor="#1D318A" />
+
+    <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:id="@+id/textPatient"-->
+        <!--android:layout_alignParentTop="true"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:layout_marginTop="106dp"-->
+        <!--android:text="On Patient Id Page"-->
+        <!--android:textColor="#ffffff" />-->
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/textPatient"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="106dp"
-        android:text="On Patient Id Page"
-        android:textColor="#ffffff" />
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Please enter the Patient ID:"
+        android:id="@+id/textView"
+        android:layout_marginBottom="10dp"
+        android:layout_above="@+id/patientIDInput"
+        android:layout_centerHorizontal="true" />
 
     <EditText
-        android:layout_width="300dp"
-        android:layout_height="50dp"
+        android:layout_width="275dp"
+        android:layout_height="30dp"
+        android:ems="10"
         android:id="@+id/patientIDInput"
-        android:layout_below="@+id/textPatient"
-        android:layout_marginTop="60dp"
-        android:layout_marginLeft="25dp"
-        android:background="#ffffff"
-        android:hint="Enter Patient ID" />
+        android:background="@drawable/roundededittext"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>

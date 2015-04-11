@@ -1,37 +1,70 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="asu.edu.televisionandroid.ImagePickerActivity">
+    tools:context="asu.edu.televisionandroid.ImagePickerActivity"
+    android:background="#ffffff">
 
+    <!-- Header aligned to top -->
 
-    <ImageView
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:id="@+id/imageViewImagePicker"
+    <LinearLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:background="@drawable/mayobg"
-        android:scaleType="centerCrop" />
+        android:background="#1D318A"
+        android:gravity="center" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CAPTURE IMAGE"
+            android:textColor="#FFF"
+            android:textSize="20dp"
+            android:layout_marginLeft="110dp"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="30dp"
+            android:background="#ffffff"
+            android:text="LOGOUT"
+            android:padding="5dp"
+            android:textSize="13dp" />
+    </LinearLayout>
+
+    <!--<ImageView-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:layout_height="fill_parent"-->
+        <!--android:id="@+id/imageViewImagePicker"-->
+        <!--android:layout_alignParentTop="true"-->
+        <!--android:layout_alignParentLeft="true"-->
+        <!--android:layout_alignParentStart="true"-->
+        <!--android:background="@drawable/mayobg"-->
+        <!--android:scaleType="centerCrop" />-->
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="275dp"
+        android:layout_height="50dp"
         android:text="CONTINUE"
         android:id="@+id/buttonImagePicker"
-        android:layout_marginBottom="50dp"
-        android:background="#ffffff"
+        android:layout_marginBottom="35dp"
+        android:background="@drawable/buttonborder"
+        android:stateListAnimator="@null"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
 
-    <Button android:text="Capture Photo"
+    <Button android:text="CAPTURE IMAGE"
         android:id="@+id/capture"
-        android:background="#ffffff"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:background="@drawable/buttonborder"
+        android:stateListAnimator="@null"
+        android:layout_width="275dp"
+        android:layout_height="50dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="150dp" />
+        android:layout_marginBottom="110dp" />
 
     <!--<Button android:text="Use Image"-->
         <!--android:id="@+id/useimage"-->
@@ -46,21 +79,20 @@
 
     <ImageView
         android:id="@+id/showImg"
-        android:layout_width="225dp"
-        android:layout_height="225dp"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_below="@+id/header"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:layout_below="@+id/textImagePicker"
-        />
+        android:layout_marginTop="41dp" />
 
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textImagePicker"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="106dp"
-        android:text="On Image Picker Page"
-        android:textColor="#ffffff" />
+    <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:id="@+id/textImagePicker"-->
+        <!--android:layout_alignParentTop="true"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:layout_marginTop="106dp"-->
+        <!--android:text="On Image Picker Page"-->
+        <!--android:textColor="#ffffff" />-->
 </RelativeLayout>

@@ -1,24 +1,59 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="asu.edu.televisionandroid.survey.SurveyActivity">
+    tools:context="asu.edu.televisionandroid.survey.SurveyActivity"
+    android:background="#ffffff">
 
 
-    <ImageView
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:id="@+id/imageViewSurvey"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:background="@drawable/mayobg"
-        android:scaleType="matrix" />
+    <!-- Header aligned to top -->
 
     <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="#1D318A"
+        android:gravity="center" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PRO"
+            android:textColor="#FFF"
+            android:textSize="20dp"
+            android:layout_marginLeft="160dp"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="75dp"
+            android:background="#ffffff"
+            android:text="LOGOUT"
+            android:padding="5dp"
+            android:textSize="13dp" />
+    </LinearLayout>
+
+    <!--<ImageView-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:layout_height="fill_parent"-->
+        <!--android:id="@+id/imageViewSurvey"-->
+        <!--android:layout_alignParentTop="true"-->
+        <!--android:layout_alignParentLeft="true"-->
+        <!--android:layout_alignParentStart="true"-->
+        <!--android:background="@drawable/mayobg"-->
+        <!--android:scaleType="matrix" />-->
+
+    <LinearLayout
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_weight="1">
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="70dp"
+        android:layout_weight="1"
+        android:background="#ffffff">
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
@@ -52,23 +87,25 @@
                 android:dividerHeight="1dp"
                 android:layout_above="@+id/buttonSurvey"
                 android:layout_weight="0.67" />
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Submit"
-                android:id="@+id/buttonSurvey"
-                android:background="#ffffff"
-
-                android:layout_alignParentBottom="true"
-                android:layout_centerHorizontal="true"
-                android:layout_gravity="center_horizontal" />
         </LinearLayout>
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:orientation="vertical"
             android:layout_weight=".9"/>
-    </LinearLayout>
+        </LinearLayout>
+    <Button
+        android:layout_width="275dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="35dp"
+        android:text="CONTINUE"
+        android:id="@+id/buttonSurvey"
+        android:background="@drawable/buttonborder"
+        android:stateListAnimator="@null"
+        android:textColor="#1D318A"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal" />
     <!--<TextView-->
         <!--android:layout_width="wrap_content"-->
         <!--android:layout_height="wrap_content"-->

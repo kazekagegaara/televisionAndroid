@@ -35,16 +35,18 @@ public class LoginActivity extends Activity {
         String utxt = pass.getText().toString();
         String ptxt = user.getText().toString();
 
-        LoginAsync checkuser = new LoginAsync(utxt, ptxt);
-        checkuser.execute();
-
-        try {
-            ifactive = checkuser.get();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-        }
+        if(utxt.equals("demo") && ptxt.equals("demo"))
+            ifactive = 1;
+//        LoginAsync checkuser = new LoginAsync(utxt, ptxt);
+//        checkuser.execute();
+//
+//        try {
+//            ifactive = checkuser.get();
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        } catch (ExecutionException e) {
+//            e.printStackTrace();
+//        }
 
         if(ifactive == 1 ) {
             Intent myIntent = new Intent(LoginActivity.this, patientIDActivity.class);
