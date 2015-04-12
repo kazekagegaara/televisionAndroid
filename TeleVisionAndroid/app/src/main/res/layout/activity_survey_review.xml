@@ -4,16 +4,16 @@
     tools:context="asu.edu.televisionandroid.survey.SurveyActivity">
 
 
-   <!-- <ImageView
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:id="@+id/imageViewSurvey"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:background="@drawable/mayobg"
-        android:scaleType="matrix" />
--->
+    <!-- <ImageView
+         android:layout_width="fill_parent"
+         android:layout_height="fill_parent"
+         android:id="@+id/imageViewSurvey"
+         android:layout_alignParentTop="true"
+         android:layout_alignParentLeft="true"
+         android:layout_alignParentStart="true"
+         android:background="@drawable/mayobg"
+         android:scaleType="matrix" />
+ -->
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
@@ -29,7 +29,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="Please answer the following questions to continue."
+                android:text="Please verify your answers."
                 android:id="@+id/textView3"
                 android:layout_gravity="center_horizontal"
                 android:autoText="false"
@@ -55,7 +55,7 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Submit"
+                android:text="Continue"
                 android:id="@+id/buttonSurvey"
                 android:background="#ffffff"
 
@@ -70,12 +70,12 @@
             android:layout_weight=".9"/>
     </LinearLayout>
     <!--<TextView-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:id="@+id/textSurvey"-->
-        <!--android:layout_alignParentTop="true"-->
-        <!--android:layout_centerHorizontal="true"-->
-        <!--android:layout_marginTop="106dp"-->
-        <!--android:text="On Survey Page"-->
-        <!--android:textColor="#ffffff" />-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:id="@+id/textSurvey"-->
+    <!--android:layout_alignParentTop="true"-->
+    <!--android:layout_centerHorizontal="true"-->
+    <!--android:layout_marginTop="106dp"-->
+    <!--android:text="On Survey Page"-->
+    <!--android:textColor="#ffffff" />-->
 </RelativeLayout>

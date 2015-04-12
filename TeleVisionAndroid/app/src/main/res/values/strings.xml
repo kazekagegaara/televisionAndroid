@@ -9,5 +9,6 @@
     <string name="title_activity_survey">SurveyActivity</string>
     <string name="title_activity_image_picker">ImagePickerActivity</string>
     <string name="title_activity_submit">SubmitActivity</string>
+    <string name="title_activity_survey_review">SurveyReviewActivity</string>
 
 </resources>

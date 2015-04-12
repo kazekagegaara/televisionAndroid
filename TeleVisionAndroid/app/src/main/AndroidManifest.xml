@@ -32,6 +32,10 @@
             android:label="@string/title_activity_survey" >
         </activity>
         <activity
+            android:name=".survey.SurveyReviewActivity"
+            android:label="@string/title_activity_survey_review" >
+        </activity>
+        <activity
             android:name=".ImagePickerActivity"
             android:label="@string/title_activity_image_picker" >
         </activity>

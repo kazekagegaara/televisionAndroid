@@ -9,7 +9,6 @@ import android.app.Activity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -20,8 +19,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Arrays;
 
-import asu.edu.televisionandroid.ImagePickerActivity;
 import asu.edu.televisionandroid.R;
 
 
@@ -32,9 +31,6 @@ public class SurveyActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_survey);
-
-
-
 
         ArrayList<Question> questions = new ArrayList<Question>();
         BufferedReader input = null;
@@ -74,7 +70,10 @@ public class SurveyActivity extends Activity {
                 // TODO Auto-generated method stub
                 String allQuestionsAnswered = adapter.areAllQuestionsAnswered();
                 if (allQuestionsAnswered.equals("true")) {
-                    Intent myIntent = new Intent(SurveyActivity.this, ImagePickerActivity.class);
+                    Intent myIntent = new Intent(SurveyActivity.this, SurveyReviewActivity.class);
+                    Question[] ques = adapter.getQuestionsWithAnswers();
+//                    getApplication().
+                    myIntent.putParcelableArrayListExtra("ques", new ArrayList<Question>((Arrays.asList(ques))) );
                     SurveyActivity.this.startActivity(myIntent);
                 } else {
                     Log.d(this.getClass().getSimpleName(), allQuestionsAnswered);

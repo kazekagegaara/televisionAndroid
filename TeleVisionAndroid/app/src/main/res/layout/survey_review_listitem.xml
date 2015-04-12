@@ -10,16 +10,10 @@
         android:layout_height="wrap_content"
         android:layout_gravity="left"
         android:padding="1dp" />
-    <RadioGroup
-        android:id="@+id/radio_group1"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_gravity="center_vertical|center_horizontal"
-        android:orientation="vertical" >
-    </RadioGroup>
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:orientation="vertical"
-        android:id="@+id/check_group1"/>
+    <TextView
+        android:id="@+id/answer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:padding="4dp" />
 </LinearLayout>
