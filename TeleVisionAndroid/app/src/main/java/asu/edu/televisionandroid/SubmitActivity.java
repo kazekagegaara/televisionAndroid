@@ -1,9 +1,12 @@
 package asu.edu.televisionandroid;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 
 public class SubmitActivity extends Activity {
@@ -12,6 +15,16 @@ public class SubmitActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_submit);
+        Button clickButton = (Button) findViewById(R.id.buttonSubmit);
+        clickButton.setOnClickListener( new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+                Intent myIntent = new Intent(SubmitActivity.this, patientIDActivity.class);
+                SubmitActivity.this.startActivity(myIntent);
+            }
+        });
     }
 
 
