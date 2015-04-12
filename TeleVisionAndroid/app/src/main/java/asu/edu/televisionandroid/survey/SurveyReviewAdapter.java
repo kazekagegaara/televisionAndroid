@@ -14,7 +14,7 @@ import java.util.Arrays;
 import asu.edu.televisionandroid.R;
 
 /**
- * Created by student on 4/11/15.
+ * Created by Akshay Ashwathanarayana on 4/11/15.
  */
 public class SurveyReviewAdapter  extends ArrayAdapter<Question> {
     private ArrayList<Question> questions;

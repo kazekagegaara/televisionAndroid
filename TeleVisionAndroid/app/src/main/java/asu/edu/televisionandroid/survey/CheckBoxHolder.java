@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import asu.edu.televisionandroid.R;
 
 /**
- * Created by student on 4/8/15.
+ * Created by Akshay Ashwathanarayana on 4/8/15.
  */
 public class CheckBoxHolder implements ListItem {
     private TextView txtTitle;

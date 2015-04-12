@@ -3,7 +3,7 @@ package asu.edu.televisionandroid.survey;
 import android.widget.TextView;
 
 /**
- * Created by student on 4/8/15.
+ * Created by Akshay Ashwathanarayana on 4/8/15.
  */
 public interface ListItem {
     public boolean isValueChosen();

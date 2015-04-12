@@ -15,7 +15,9 @@ import java.util.ArrayList;
 import asu.edu.televisionandroid.ImagePickerActivity;
 import asu.edu.televisionandroid.R;
 
-
+/**
+ * Created by Akshay Ashwathanarayana on 4/11/15.
+ */
 public class SurveyReviewActivity extends Activity {
     private SurveyReviewAdapter adapter;
 
