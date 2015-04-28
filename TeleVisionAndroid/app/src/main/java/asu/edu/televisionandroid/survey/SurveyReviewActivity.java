@@ -12,6 +12,7 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
+import asu.edu.televisionandroid.ChoiceActivity;
 import asu.edu.televisionandroid.ImagePickerActivity;
 import asu.edu.televisionandroid.R;
 
@@ -39,7 +40,7 @@ public class SurveyReviewActivity extends Activity {
 
             @Override
             public void onClick(View v) {
-                Intent myIntent = new Intent(SurveyReviewActivity.this, ImagePickerActivity.class);
+                Intent myIntent = new Intent(SurveyReviewActivity.this, ChoiceActivity.class);
                 SurveyReviewActivity.this.startActivity(myIntent);
             }
         });

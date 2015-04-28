@@ -1,0 +1,72 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="asu.edu.televisionandroid.ChoiceActivity"
+    android:background="#ffffff">
+
+    <!-- Header aligned to top -->
+
+    <LinearLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="#1D318A"
+        android:gravity="center" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SELECT OPTION"
+            android:textColor="#FFF"
+            android:textSize="20dp"
+            android:layout_marginLeft="110dp"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="30dp"
+            android:background="#ffffff"
+            android:text="LOGOUT"
+            android:padding="5dp"
+            android:textSize="13dp" />
+    </LinearLayout>
+
+    <Button
+        android:layout_width="275dp"
+        android:layout_height="50dp"
+        android:text="Capture Video"
+        android:id="@+id/captureVideo"
+        android:background="@drawable/buttonborder"
+        android:stateListAnimator="@null"
+        android:layout_marginTop="111dp"
+        android:layout_below="@+id/header"
+        android:layout_centerHorizontal="true" />
+
+    <Button android:text="Capture One Eye Image"
+        android:id="@+id/captureSingleImage"
+        android:background="@drawable/buttonborder"
+        android:stateListAnimator="@null"
+        android:layout_width="275dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="25dp"
+        android:layout_below="@+id/captureVideo"
+        android:layout_alignLeft="@+id/captureVideo"
+        android:layout_alignStart="@+id/captureVideo" />
+
+    <Button android:text="Capture Both Eye Images"
+        android:id="@+id/captureTwoImage"
+        android:background="@drawable/buttonborder"
+        android:stateListAnimator="@null"
+        android:layout_width="275dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="25dp"
+        android:layout_below="@+id/captureSingleImage"
+        android:layout_alignLeft="@+id/captureSingleImage"
+        android:layout_alignStart="@+id/captureSingleImage" />
+
+
+</RelativeLayout>

@@ -1,0 +1,82 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="asu.edu.televisionandroid.ImagePickerActivity"
+    android:background="#ffffff">
+
+    <!-- Header aligned to top -->
+
+    <LinearLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="#1D318A"
+        android:gravity="center" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CAPTURE VIDEO"
+            android:textColor="#FFF"
+            android:textSize="20dp"
+            android:layout_marginLeft="110dp"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="30dp"
+            android:background="#ffffff"
+            android:text="LOGOUT"
+            android:padding="5dp"
+            android:textSize="13dp" />
+    </LinearLayout>
+
+
+
+    <!--<ImageView-->
+        <!--android:id="@+id/showImg"-->
+        <!--android:layout_width="250dp"-->
+        <!--android:layout_height="250dp"-->
+        <!--android:layout_below="@+id/header"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:layout_marginTop="41dp" />-->
+
+    <!-- Continue to next Activity -->
+    <Button
+        android:id="@+id/btnNext"
+        android:layout_width="275dp"
+        android:layout_height="50dp"
+        android:text="CONTINUE"
+        android:stateListAnimator="@null"
+        android:background="@drawable/buttonborder"
+        android:layout_marginBottom="38dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <!-- Record video button -->
+    <Button
+        android:id="@+id/btnRecordVideo"
+        android:layout_width="275dp"
+        android:layout_height="50dp"
+        android:text="RECORD A VIDEO"
+        android:background="@drawable/buttonborder"
+        android:stateListAnimator="@null"
+        android:layout_above="@+id/btnNext"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="25dp" />
+
+    <!-- To preview video recorded -->
+    <VideoView
+        android:id="@+id/videoPreview"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:visibility="gone"
+        android:layout_marginTop="75dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>
