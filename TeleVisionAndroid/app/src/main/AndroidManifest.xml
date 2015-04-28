@@ -3,11 +3,12 @@
     package="asu.edu.televisionandroid" >
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-feature android:name="android.hardware.camera"
-        android:required="true" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
-        android:maxSdkVersion="18" />
 
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -16,7 +17,7 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name=".LoginActivity"
-            android:label="@string/title_activity_login" >
+            android:label="LoginActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -42,6 +43,18 @@
         <activity
             android:name=".SubmitActivity"
             android:label="@string/title_activity_submit" >
+        </activity>
+        <activity
+            android:name=".ChoiceActivity"
+            android:label="@string/title_activity_choice" >
+        </activity>
+        <activity
+            android:name=".VideoCaptureActivity"
+            android:label="@string/title_activity_video_capture" >
+        </activity>
+        <activity
+            android:name=".ImagePickerActivity2"
+            android:label="@string/title_activity_image_picker_activity2" >
         </activity>
     </application>
 

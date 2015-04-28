@@ -10,5 +10,8 @@
     <string name="title_activity_image_picker">ImagePickerActivity</string>
     <string name="title_activity_submit">SubmitActivity</string>
     <string name="title_activity_survey_review">SurveyReviewActivity</string>
+    <string name="title_activity_choice">ChoiceActivity</string>
+    <string name="title_activity_video_capture">VideoCaptureActivity</string>
+    <string name="title_activity_image_picker_activity2">ImagePickerActivity2</string>
 
 </resources>

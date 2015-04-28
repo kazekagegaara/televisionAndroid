@@ -23,9 +23,11 @@ import java.util.Date;
 import java.util.Locale;
 import android.util.Log;
 
-public class ImagePickerActivity extends Activity {
+public class ImagePickerActivity2 extends Activity {
 
-    private static ImageView showImg;
+    private static ImageView showLeftImg;
+    private static ImageView showRightImg;
+    private int whichEye = 0;
 
     // Activity request codes
     private static final int CAMERA_CAPTURE_IMAGE_REQUEST_CODE = 100;
@@ -39,14 +41,24 @@ public class ImagePickerActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_image_picker);
+        setContentView(R.layout.activity_image_picker_activity2);
 
-        showImg = (ImageView) findViewById(R.id.showImg);
+        showLeftImg = (ImageView) findViewById(R.id.showLeftImg);
+        showRightImg = (ImageView) findViewById(R.id.showRightImg);
 
 
-        Button photo = (Button) findViewById(R.id.capture);
+        Button photo = (Button) findViewById(R.id.captureleft);
         photo.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                whichEye = 1;
+                dispatchTakePictureIntent();
+            }
+        });
+
+        Button photo2 = (Button) findViewById(R.id.captureright);
+        photo2.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                whichEye = 2;
                 dispatchTakePictureIntent();
             }
         });
@@ -67,8 +79,8 @@ public class ImagePickerActivity extends Activity {
             @Override
             public void onClick(View v) {
                 // TODO Auto-generated method stub
-                Intent myIntent = new Intent(ImagePickerActivity.this, SubmitActivity.class);
-                ImagePickerActivity.this.startActivity(myIntent);
+                Intent myIntent = new Intent(ImagePickerActivity2.this, SubmitActivity.class);
+                ImagePickerActivity2.this.startActivity(myIntent);
             }
         });
 
@@ -81,8 +93,8 @@ public class ImagePickerActivity extends Activity {
                 LogoutHandler lh = new LogoutHandler();
                 lh.deleteStoredFiles();
                 // TODO Auto-generated method stub
-                Intent myIntent = new Intent(ImagePickerActivity.this, LoginActivity.class);
-                ImagePickerActivity.this.startActivity(myIntent);
+                Intent myIntent = new Intent(ImagePickerActivity2.this, LoginActivity.class);
+                ImagePickerActivity2.this.startActivity(myIntent);
             }
         });
     }
@@ -135,8 +147,12 @@ public class ImagePickerActivity extends Activity {
             if (resultCode == RESULT_OK) {
                 // image captured successfully
                 try{
+                    System.out.println(fileUri);
                     Bitmap bmp = BitmapFactory.decodeStream(getContentResolver().openInputStream(fileUri));
-                    showImg.setImageBitmap(bmp);
+                    if(whichEye == 1)
+                        showLeftImg.setImageBitmap(bmp);
+                    else if(whichEye == 2)
+                        showRightImg.setImageBitmap(bmp);
                 } catch(IOException e){
                     Toast.makeText(getApplicationContext(),
                             "File not found", Toast.LENGTH_SHORT)

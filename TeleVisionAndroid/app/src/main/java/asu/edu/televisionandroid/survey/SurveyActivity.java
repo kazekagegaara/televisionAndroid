@@ -21,6 +21,9 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import asu.edu.televisionandroid.LogoutHandler;
+import asu.edu.televisionandroid.LoginActivity;
+
 import asu.edu.televisionandroid.R;
 
 
@@ -78,6 +81,20 @@ public class SurveyActivity extends Activity {
                 } else {
                     Log.d(this.getClass().getSimpleName(), allQuestionsAnswered);
                 }
+            }
+        });
+
+        Button logoutBtn = (Button) findViewById(R.id.logoutBtn);
+        logoutBtn.setOnClickListener( new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+                LogoutHandler lh = new LogoutHandler();
+                lh.deleteStoredFiles();
+                // TODO Auto-generated method stub
+                Intent myIntent = new Intent(SurveyActivity.this, LoginActivity.class);
+                SurveyActivity.this.startActivity(myIntent);
             }
         });
     }
