@@ -83,6 +83,20 @@ public class ImagePickerActivity2 extends Activity {
                 ImagePickerActivity2.this.startActivity(myIntent);
             }
         });
+
+        Button logoutBtn = (Button) findViewById(R.id.logoutBtn);
+        logoutBtn.setOnClickListener( new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+                LogoutHandler lh = new LogoutHandler();
+                lh.deleteStoredFiles();
+                // TODO Auto-generated method stub
+                Intent myIntent = new Intent(ImagePickerActivity2.this, LoginActivity.class);
+                ImagePickerActivity2.this.startActivity(myIntent);
+            }
+        });
     }
 
     /**

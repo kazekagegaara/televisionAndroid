@@ -69,6 +69,20 @@ public class VideoCaptureActivity extends Activity {
             }
         });
 
+        Button logoutBtn = (Button) findViewById(R.id.logoutBtn);
+        logoutBtn.setOnClickListener( new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+                LogoutHandler lh = new LogoutHandler();
+                lh.deleteStoredFiles();
+                // TODO Auto-generated method stub
+                Intent myIntent = new Intent(VideoCaptureActivity.this, LoginActivity.class);
+                VideoCaptureActivity.this.startActivity(myIntent);
+            }
+        });
+
         // Checking camera availability
         if (!isDeviceSupportCamera()) {
             Toast.makeText(getApplicationContext(),

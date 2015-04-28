@@ -15,6 +15,8 @@ import java.util.ArrayList;
 import asu.edu.televisionandroid.ChoiceActivity;
 import asu.edu.televisionandroid.ImagePickerActivity;
 import asu.edu.televisionandroid.R;
+import asu.edu.televisionandroid.LoginActivity;
+import asu.edu.televisionandroid.LogoutHandler;
 
 /**
  * Created by Akshay Ashwathanarayana on 4/11/15.
@@ -41,6 +43,20 @@ public class SurveyReviewActivity extends Activity {
             @Override
             public void onClick(View v) {
                 Intent myIntent = new Intent(SurveyReviewActivity.this, ChoiceActivity.class);
+                SurveyReviewActivity.this.startActivity(myIntent);
+            }
+        });
+
+        Button logoutBtn = (Button) findViewById(R.id.logoutBtn);
+        logoutBtn.setOnClickListener( new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+                LogoutHandler lh = new LogoutHandler();
+                lh.deleteStoredFiles();
+                // TODO Auto-generated method stub
+                Intent myIntent = new Intent(SurveyReviewActivity.this, LoginActivity.class);
                 SurveyReviewActivity.this.startActivity(myIntent);
             }
         });

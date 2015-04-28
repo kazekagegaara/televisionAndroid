@@ -44,6 +44,20 @@ public class ChoiceActivity extends Activity {
                 ChoiceActivity.this.startActivity(myIntent);
             }
         });
+
+        Button logoutBtn = (Button) findViewById(R.id.logoutBtn);
+        logoutBtn.setOnClickListener( new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+                LogoutHandler lh = new LogoutHandler();
+                lh.deleteStoredFiles();
+                // TODO Auto-generated method stub
+                Intent myIntent = new Intent(ChoiceActivity.this, LoginActivity.class);
+                ChoiceActivity.this.startActivity(myIntent);
+            }
+        });
     }
 
 }
