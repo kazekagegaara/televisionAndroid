@@ -3,6 +3,7 @@
 package asu.edu.televisionandroid;
 import java.io.File;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.Locale;
 
@@ -18,6 +19,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 import android.widget.VideoView;
+
+import asu.edu.televisionandroid.survey.Question;
 
 public class VideoCaptureActivity extends Activity {
 
@@ -53,6 +56,8 @@ public class VideoCaptureActivity extends Activity {
             public void onClick(View v) {
                 // TODO Auto-generated method stub
                 Intent myIntent = new Intent(VideoCaptureActivity.this, SubmitActivity.class);
+                ArrayList<Question> questions = getIntent().getParcelableArrayListExtra("ques");
+                myIntent.putParcelableArrayListExtra("ques", questions );
                 VideoCaptureActivity.this.startActivity(myIntent);
             }
         });

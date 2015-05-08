@@ -19,9 +19,12 @@ import android.os.Environment;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.Locale;
 import android.util.Log;
+
+import asu.edu.televisionandroid.survey.Question;
 
 public class ImagePickerActivity extends Activity {
 
@@ -68,6 +71,8 @@ public class ImagePickerActivity extends Activity {
             public void onClick(View v) {
                 // TODO Auto-generated method stub
                 Intent myIntent = new Intent(ImagePickerActivity.this, SubmitActivity.class);
+                ArrayList<Question> questions = getIntent().getParcelableArrayListExtra("ques");
+                myIntent.putParcelableArrayListExtra("ques", questions );
                 ImagePickerActivity.this.startActivity(myIntent);
             }
         });

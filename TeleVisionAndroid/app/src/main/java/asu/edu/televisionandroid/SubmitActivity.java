@@ -2,6 +2,7 @@ package asu.edu.televisionandroid;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.pdf.PdfDocument;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -10,24 +11,52 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.util.ArrayList;
+
+import asu.edu.televisionandroid.survey.PDFGenerationActivity;
+import asu.edu.televisionandroid.survey.Question;
 
 public class SubmitActivity extends Activity {
 
     private static final String IMAGE_DIRECTORY_NAME = "MayoClinicStorage";
-
+    public static  PdfDocument document = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_submit);
 //        System.out.println("here");
         getStoredFiles();
+        if(document == null){
+            document = new PdfDocument();
+            ArrayList<Question> questions = getIntent().getParcelableArrayListExtra("ques");
+            Intent myIntent = new Intent(SubmitActivity.this, PDFGenerationActivity.class);
+            myIntent.putParcelableArrayListExtra("ques", questions );
+            SubmitActivity.this.startActivity(myIntent);
+        }
+
+
         Button clickButton = (Button) findViewById(R.id.buttonSubmit);
         clickButton.setOnClickListener( new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
 
+                String externalPath = Environment.getExternalStorageDirectory().toString();
+                File outputFolder = new File(externalPath+"/TeleVisionPRO");
+                File file = new File(outputFolder.getAbsolutePath(), "proReport.pdf");
+                if(!outputFolder.exists()){
+                    outputFolder.mkdir();
+                }
+                try {
+                    file.createNewFile();
+                    FileOutputStream outputStream = new FileOutputStream(file);
+                    document.writeTo(outputStream);
+                    document.close();
+                    document = null;
+                } catch (java.io.IOException e) {
+                    e.printStackTrace();
+                }
                 Intent myIntent = new Intent(SubmitActivity.this, patientIDActivity.class);
                 SubmitActivity.this.startActivity(myIntent);
             }

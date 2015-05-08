@@ -9,6 +9,7 @@ import android.app.Activity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -75,11 +76,11 @@ public class SurveyActivity extends Activity {
                 if (allQuestionsAnswered.equals("true")) {
                     Intent myIntent = new Intent(SurveyActivity.this, SurveyReviewActivity.class);
                     Question[] ques = adapter.getQuestionsWithAnswers();
-//                    getApplication().
                     myIntent.putParcelableArrayListExtra("ques", new ArrayList<Question>((Arrays.asList(ques))) );
                     SurveyActivity.this.startActivity(myIntent);
                 } else {
                     Log.d(this.getClass().getSimpleName(), allQuestionsAnswered);
+                    (Toast.makeText(getApplicationContext(), "Answer all questions to continue", Toast.LENGTH_SHORT)).show();
                 }
             }
         });

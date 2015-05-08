@@ -20,6 +20,7 @@ import android.widget.RelativeLayout;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import asu.edu.televisionandroid.ChoiceActivity;
 import asu.edu.televisionandroid.ImagePickerActivity;
@@ -36,7 +37,6 @@ public class SurveyReviewActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        System.out.println("in review"  );
         setContentView(R.layout.activity_survey_review);
         ArrayList<Question> questions = getIntent().getParcelableArrayListExtra("ques");
 
@@ -52,6 +52,9 @@ public class SurveyReviewActivity extends Activity {
             @Override
             public void onClick(View v) {
                 Intent myIntent = new Intent(SurveyReviewActivity.this, ChoiceActivity.class);
+                Question[] ques = adapter.getQuestionsWithAnswers();
+                myIntent.putParcelableArrayListExtra("ques", new ArrayList<Question>((Arrays.asList(ques))) );
+//                myIntent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
                 SurveyReviewActivity.this.startActivity(myIntent);
             }
         });
@@ -65,55 +68,11 @@ public class SurveyReviewActivity extends Activity {
                 LogoutHandler lh = new LogoutHandler();
                 lh.deleteStoredFiles();
                 // TODO Auto-generated method stub
+
                 Intent myIntent = new Intent(SurveyReviewActivity.this, LoginActivity.class);
                 SurveyReviewActivity.this.startActivity(myIntent);
-                LayoutInflater inflater = getLayoutInflater();
-                View pdfView = inflater.inflate(R.layout.pro_pdf_page, null, false);
-                ListView listView2 = (ListView) pdfView.findViewById(R.id.listView);
-                listView2.setAdapter(adapter);
-                // create a new document
-                PdfDocument document = new PdfDocument();
 
-                // crate a page description
-                PdfDocument.PageInfo pageInfo;
-                DisplayMetrics dm = new DisplayMetrics();
-                getWindowManager().getDefaultDisplay().getMetrics(dm);
-                int width=dm.widthPixels;
-                int height=dm.heightPixels;
-                pageInfo = new PdfDocument.PageInfo.Builder(width, height, 1).create();
-
-                // start a page
-                PdfDocument.Page page = document.startPage(pageInfo);
-
-                // draw something on the page
-                RelativeLayout content = (RelativeLayout)findViewById(R.id.wholeView);
-                content.draw(page.getCanvas());
-
-                // finish the page
-                document.finishPage(page);
-               /* . . .
-                // add more pages
-                . . .
-               */ // write the document content
-                String externalPath = Environment.getExternalStorageDirectory().toString();
-                File outputFolder = new File(externalPath+"/TeleVisionPRO");
-                File file = new File(outputFolder.getAbsolutePath(), "proReport.pdf");
-                if(!outputFolder.exists()){
-                    outputFolder.mkdir();
-                }
-                try {
-                    file.createNewFile();
-                    FileOutputStream outputStream = new FileOutputStream(file);
-                    document.writeTo(outputStream);
-                } catch (java.io.IOException e) {
-                    e.printStackTrace();
-                }
-
-
-                // close the document
-                document.close();
-
-            }
+        }
         });
     }
 

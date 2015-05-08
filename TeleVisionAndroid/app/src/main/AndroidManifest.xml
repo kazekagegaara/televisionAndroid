@@ -56,6 +56,14 @@
             android:name=".ImagePickerActivity2"
             android:label="@string/title_activity_image_picker_activity2" >
         </activity>
+        <activity
+            android:name=".survey.PDFGenerationActivity"
+            android:label="@string/title_activity_PDFGenerationActivity" >
+        </activity>
+        <activity
+            android:name=".survey.PDFGenerationActivity2"
+            android:label="@string/title_activity_PDFGenerationActivity2" >
+        </activity>
     </application>
 
 </manifest>

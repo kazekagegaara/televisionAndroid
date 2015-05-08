@@ -1,24 +1,39 @@
 {
     "questions": [
         {
-            "question":"The selected photo is of which eye",
-            "multiselect":false,
-            "options":["left", "right"]
-        },
-        {
-            "question":"Have you recently had any accident",
+            "question":"Do you wear glasses or contact lenses?",
             "multiselect":false,
             "options":["yes", "no"]
         },
         {
-            "question":"Have you been recently diagnosed with diabetes",
+            "question":"Have you had any eye problems, injuries or surgeries in the past",
             "multiselect":false,
             "options":["yes", "no"]
         },
         {
-            "question":"Do you have any of the following symptoms.",
+            "question":"Have you had any major illnesses, hospitalizations, or injuries in the past?",
+            "multiselect":false,
+            "options":["yes", "no"]
+        },
+        {
+            "question":"Do you have any existing medical conditions?",
+            "multiselect":false,
+            "options":["yes", "no"]
+        },
+        {
+            "question":"Are you currently under any medications?",
+            "multiselect":false,
+            "options":["yes", "no"]
+         },
+        {
+            "question":"Reason for today’s visit",
             "multiselect":true,
-            "options":["blurred vision", "change in vision", "eye pain", "burning sensation"]
-        }
+            "options":["Eye pain", "Burning, itching or scratching sensation", "Redness", "Tearing", "Discharge", "Blurred or fuzzy vision", "Double vision", "Problems with glasses", "Flashing lights", "Cobwebs, dark spots or dark veils", "Headache", "Other"]
+        },
+        {
+            "question":"Does your family have a history of eye related problems?",
+            "multiselect":false,
+            "options":["yes", "no"]
+         }
     ]
 }

@@ -20,7 +20,6 @@ public class SurveyReviewAdapter  extends ArrayAdapter<Question> {
     private ArrayList<Question> questions;
     private Context context;
     private int layoutResourceId;
-    private ArrayList<View> rows;
 
     public SurveyReviewAdapter(Context context, int resource, Question[] ques) {
         super(context, resource, ques);
@@ -57,4 +56,7 @@ public class SurveyReviewAdapter  extends ArrayAdapter<Question> {
         return position;
     }
 
+    public Question[] getQuestionsWithAnswers() {
+        return questions.toArray(new Question[questions.size()]);
+    }
 }

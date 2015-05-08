@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:id="@+id/wholeView"
+    >
 
     <TextView
         android:layout_width="wrap_content"
@@ -10,17 +12,94 @@
         android:text="PRO Report"
         android:id="@+id/textView2"
         android:layout_gravity="center_horizontal"
-        android:paddingTop="15px" />
+        android:paddingTop="15px"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView2"
+        android:src="@drawable/mayologo"
+        android:layout_alignParentTop="true" />
+
+    <RelativeLayout
+        android:background="@drawable/buttonborder"
+        android:layout_width="wrap_content"
+        android:layout_height="80dp"
+        android:layout_below="@+id/imageView2"
+        android:weightSum="1"
+        android:layout_alignParentEnd="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/relativeLayout">
+
+        <TextView
+            android:layout_width="92dp"
+            android:layout_height="wrap_content"
+            android:text="Patient name:"
+            android:id="@+id/textView5" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Patient ID :"
+            android:id="@+id/textView6"
+            android:layout_alignParentStart="true"
+            android:layout_alignTop="@+id/idHolder"
+            android:layout_alignEnd="@+id/textView5" />
+
+        <TextView
+            android:layout_width="92dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/nameHolder"
+            android:layout_alignParentEnd="true"
+            android:layout_alignBottom="@+id/textView5"
+            android:layout_toEndOf="@+id/textView5" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/idHolder"
+            android:layout_centerVertical="true"
+            android:layout_alignStart="@+id/nameHolder" />
+    </RelativeLayout>
+
+    <ImageView
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:id="@+id/leftEye"
+        android:layout_below="@+id/relativeLayout"
+        android:layout_alignStart="@+id/relativeLayout"
+        android:layout_marginTop="31dp" />
+
+    <ImageView
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:id="@+id/rightEye"
+        android:layout_alignTop="@+id/leftEye"
+        android:layout_alignEnd="@+id/relativeLayout" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Testing pdf generation"
-        android:id="@+id/textView4" />
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Left"
+        android:id="@+id/textView4"
+        android:layout_marginTop="63dp"
+        android:layout_below="@+id/leftEye"
+        android:layout_toEndOf="@+id/imageView2" />
 
-    <ListView
-        android:layout_width="match_parent"
-        android:layout_height="372dp"
-        android:id="@+id/listView" />
-</LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Right"
+        android:id="@+id/textView7"
+        android:layout_alignBaseline="@+id/textView4"
+        android:layout_alignBottom="@+id/textView4"
+        android:layout_toEndOf="@+id/textView2"
+        android:layout_marginStart="33dp" />
+
+</RelativeLayout>
